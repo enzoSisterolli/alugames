@@ -1,17 +1,27 @@
 function alterarStatus (id)
 {
-    let gameClicado = document.getElementById(`game-${id}`);
-    let button = gameClicado.querySelector('.dashboard__item__button');
-    let img = gameClicado.querySelector('.dashboard__item__img');
-    let name = gameClicado.querySelector('.dashboard__item__name');
-
-    if (gameClicado.classList.contains('dashboard__item__button--return')) {
-        button.classList.remove('dashboard__item__button--return');
-        button.classList.add('dashboard__item__button');
-        img.classList.remove('dashboard__item__img--rented');
-        img.classList.add('dashboard__item__img');
-        name.classList.remove('dashboard__item__name--rented');
-        name.classList.add('dashboard__item__name');
+   let jogo = document.getElementById(`game-${id}`);
+   let imagem = jogo.querySelector(".dashboard__item__img");
+   let nome = jogo.querySelector(".dashboard_item_name");
+   let botao = jogo.querySelector(".dashboard__item__button");
+   
+    if (imagem.classList.contains("dashboard__item__img--rented"))
+    {
+            imagem.classList.remove("dashboard__item__img--rented");
     }
-    alert(name.innerHTML);
+    else
+    {
+            imagem.classList.add("dashboard__item__img--rented");
+    }
+    if (botao.classList.contains("dashboard__item__button--return"))
+    {
+            botao.classList.remove("dashboard__item__button--return");
+            botao.innerHTML = "Alugar";
+    }
+    else   
+    {
+            botao.classList.add("dashboard__item__button--return");
+            botao.innerHTML("Devolver")
+    }
+
 }
